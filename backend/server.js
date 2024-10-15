@@ -6,6 +6,7 @@ import cors from "cors";
 // routes
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import matchRoutes from "./routes/matchRoutes.js";
 
 import { connectDB } from "./config/db.js";
 
@@ -25,6 +26,7 @@ app.use(
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/matches", matchRoutes);
 
 app.listen(PORT, () => {
   console.log("Server started at this port:" + PORT);

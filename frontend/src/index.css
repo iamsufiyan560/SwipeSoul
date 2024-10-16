@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.profilebg {
+  background-image: url("/profilebg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}

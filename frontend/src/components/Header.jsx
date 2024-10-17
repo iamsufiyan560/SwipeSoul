@@ -24,10 +24,10 @@ export const Header = () => {
   // #FFD4D2
   // #FFF2F1
   return (
-    <header className=" shadow-lg backdrop-blur-sm  sticky top-0">
+    <header className=" shadow-lg ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center ">
-          <div className="flex items-center">
+          <div className="flex ml-12 items-center">
             <Link to="/" className="flex items-center space-x-2">
               <img src="/logo.svg" alt="logo" className="size-28" />
               <span className="text-2xl font-bold text-pink-400 hidden sm:inline">
@@ -108,13 +108,13 @@ export const Header = () => {
 
       {mobileMenuOpen && (
         <div className="md:hidden  ">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 ">
             {authUser ? (
               <>
                 <hr className="h-1  bg-pink-500   " />
                 <Link
                   to="/profile"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-pink-500 hover:bg-pink-700"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-pink-500 hover:text-white hover:bg-pink-700"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Profile
@@ -126,7 +126,7 @@ export const Header = () => {
                     logout();
                     setMobileMenuOpen(false);
                   }}
-                  className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-pink-500 hover:bg-pink-700"
+                  className="block hover:text-white  w-full text-left px-3 py-2 rounded-md text-base font-medium text-pink-500 hover:bg-pink-700"
                 >
                   Logout
                 </button>
@@ -136,14 +136,14 @@ export const Header = () => {
               <>
                 <Link
                   to="/auth"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-pink-700"
+                  className="block hover:text-white  px-3 py-2 rounded-md text-base font-medium text-pink-500 hover:bg-pink-700"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Login
                 </Link>
                 <Link
                   to="/auth"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-pink-700"
+                  className="block hover:text-white  px-3 py-2 rounded-md text-base font-medium text-pink-500  hover:bg-pink-700"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Sign Up

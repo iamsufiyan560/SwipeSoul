@@ -5,14 +5,30 @@ import { useMatchStore } from "../store/useMatchStore";
 import { Frown } from "lucide-react";
 import SwipeArea from "../components/SwipeArea";
 import SwipeFeedback from "../components/SwipeFeedback";
+import { useAuthStore } from "../store/useAuthStore";
 
 const HomePage = () => {
-  const { isLoadingUserProfiles, getUserProfiles, userProfiles } =
-    useMatchStore();
+  const {
+    isLoadingUserProfiles,
+    getUserProfiles,
+    userProfiles,
+    subscribeToNewMatches,
+    unsubscribeFromNewMatches,
+  } = useMatchStore();
+
+  const { authUser } = useAuthStore();
 
   useEffect(() => {
     getUserProfiles();
   }, [getUserProfiles]);
+
+  useEffect(() => {
+    authUser && subscribeToNewMatches();
+
+    return () => {
+      unsubscribeFromNewMatches();
+    };
+  }, [subscribeToNewMatches, unsubscribeFromNewMatches, authUser]);
 
   return (
     <div

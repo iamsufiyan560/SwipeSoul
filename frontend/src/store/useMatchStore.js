@@ -78,6 +78,7 @@ export const useMatchStore = create((set) => ({
   unsubscribeFromNewMatches: () => {
     try {
       const socket = getSocket();
+
       socket.off("newMatch");
     } catch (error) {
       console.error(error);

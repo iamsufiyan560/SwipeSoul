@@ -10,7 +10,7 @@ const SwipeArea = () => {
   };
 
   return (
-    <div className="relative w-full max-w-sm h-[28rem]">
+    <div className="relative w-full  max-w-sm h-[28rem]">
       {userProfiles.map((user) => (
         <TinderCard
           className="absolute shadow-none"

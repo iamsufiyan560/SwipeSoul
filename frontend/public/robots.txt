@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /api/          # Prevent crawlers from accessing API routes
+Allow: /                 # Allow everything else

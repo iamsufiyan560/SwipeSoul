@@ -14,6 +14,7 @@ import { connectDB } from "./config/db.js";
 
 import { initializeSocket } from "./socket/socket.server.js";
 import path from "path";
+import jobs from "./cron/cron.js";
 
 dotenv.config();
 
@@ -50,4 +51,5 @@ if (process.env.NODE_ENV === "production") {
 httpServer.listen(PORT, () => {
   console.log("Server started at this port:" + PORT);
   connectDB();
+  jobs.start();
 });
